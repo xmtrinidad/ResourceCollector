@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website Title</title>
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/73ef1a17f6.js"></script>
+    <!-- Bootstrap 4 -->
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <nav class="mynav">
+        <h4 class="mynav__title">Resource Collector</h4>
+        <ul class="mynav__list">
+            <li class="mynav__list-item">
+                <a class="mynav__list-item-link" href="./home.html">View<br>All</a>
+            </li>
+            <li class="mynav__list-item list-item--active">
+                <a class="mynav__list-item-link" href="./add.html">Add<br>Resource</a>
+            </li>
+            <li class="mynav__list-item">
+                <a class="mynav__list-item-link" href="./index.html">Log<br>Out</a>
+            </li>
+        </ul>
+    </nav>
+    <main class="container">
+        <form action="home.html" class="form animated bounceInDown">
+            <div class="form__header">
+                <h3 class="form__header-title">Add Resource</h3>
+            </div>
+            <div class="form-group form__field">
+                <label for="resource_title">Enter Email:</label>
+                <input placeholder="Resource Title" type="text" class="form-control form__field-title">
+            </div>
+            <div class="form-group form__field">
+                <label for="user_link">Link:</label>
+                <input id="user_link" placeholder="Link" type="text" class="form-control form__field-link">
+            </div>
+
+            <div class="form__header">
+                <h3 class="form__header-title">Key Points</h3>
+            </div>
+
+            <div class="form-group form__field">
+                <label for="user_point1">Point 1:</label>
+                <input id="user_point1" placeholder="Point #1" type="text" class="form-control form__field-point">
+            </div>
+            <div class="form-group form__field">
+                <label for="user_point2">Point 2:</label>
+                <input id="user_point2" placeholder="Point #2" type="text" class="form-control form__field-point">
+            </div>
+            <div class="form-group form__field">
+                <label for="user_point3">Point 3:</label>
+                <input id="user_point3" placeholder="Point #3" type="text" class="form-control form__field-point">
+            </div>
+            <div class="form-group form__field">
+                <label for="user_point4">Point 4:</label>
+                <input id="user_point4" placeholder="Point #4" type="text" class="form-control form__field-point">
+            </div>
+
+            <div class="form__btns text-center">
+                <div class="my-3 form__btn">
+                    <button class="btn btn-primary col-6 form__btn-signup" type="submit">Submit Reesource</button>
+                </div>
+            </div>
+
+        </form>
+    </main>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

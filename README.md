@@ -1,0 +1,1 @@
+Small web application to practice various ES6 concepts and Firebase Authentication

@@ -1,0 +1,135 @@
+body {
+  background: linear-gradient(135deg, #ebf1f6 0%, #abd3ee 50%, #89c3eb 51%, #d5ebfb 100%) no-repeat;
+  font-family: 'Permanent Marker', cursive;
+  min-height: 700px;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.65);
+  max-width: 330px;
+  margin: 50px auto;
+  padding: 12px;
+}
+
+.form label {
+  display: none;
+}
+
+.form .form__header {
+  text-align: center;
+  color: #4D5558;
+}
+
+.form .form__field input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid rgba(185, 187, 187, 0.85);
+}
+
+.form .form__btn-login,
+.form .form__btn-signup {
+  max-width: 250px;
+  background: rgba(76, 169, 219, 0.9);
+  border: none;
+  border-radius: 2px;
+  padding: 12px;
+}
+
+.form .form__btn-login:focus,
+.form .form__btn-signup:focus {
+  background: rgba(130, 213, 243, 0.9);
+  outline: none !important;
+  text-decoration: none;
+}
+
+.mynav {
+  background: rgba(121, 180, 223, 0.69);
+}
+
+.mynav .mynav__title {
+  text-align: center !important;
+}
+
+.mynav .mynav__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.mynav .mynav__list .mynav__list-item {
+  cursor: pointer;
+  position: relative;
+  color: #F0F5F8;
+  width: 100%;
+  text-align: center;
+}
+
+.mynav .mynav__list .mynav__list-item:after {
+  content: '';
+  width: 0;
+  transition: width .2s;
+}
+
+.mynav .mynav__list .mynav__list-item .mynav__list-item-link {
+  display: block;
+  height: 100%;
+  padding: 10px;
+  color: inherit;
+}
+
+.mynav .mynav__list .list-item--active:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+}
+
+.resources {
+  text-align: center;
+}
+
+.resources .resource {
+  display: inline-block;
+  vertical-align: top;
+  margin: 15px auto;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  box-shadow: 2px 7px 5px 0px rgba(50, 50, 50, 0.33);
+  padding: 12px;
+}
+
+.resources .resource .resource__img-container {
+  text-align: center;
+}
+
+.resources .resource .resource__title {
+  text-align: center;
+}
+
+.resources .resource .resource__desc {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .resources .resource {
+    max-width: 300px;
+  }
+  .resources .resource .resource__desc {
+    text-align: left;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .7s;
+  }
+  .resources .resource .show_desc {
+    max-height: 550px;
+  }
+}
+ 
+
+ /*# sourceMappingURL= main.css.map */

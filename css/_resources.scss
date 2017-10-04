@@ -1,0 +1,39 @@
+.resources {
+    text-align: center;
+    .resource {
+        display: inline-block;
+        vertical-align: top;
+        margin: 15px auto;
+        background: rgba(255, 255, 255, .6);
+        border-radius: 5px;
+        box-shadow: 2px 7px 5px 0px rgba(50, 50, 50, 0.33);
+        padding: 12px;
+        .resource__img-container {
+            text-align: center;
+        }
+        .resource__title {
+            text-align: center;
+        }
+        .resource__desc {
+            text-align: left;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .resources {
+        .resource {
+            max-width: 300px;
+            .resource__desc {
+                text-align: left;
+                max-height: 0;
+                overflow: hidden;
+                transition: all .7s;
+            }
+            .show_desc {
+                max-height: 550px;
+            }
+        }
+    }
+    
+}
