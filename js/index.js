@@ -2,6 +2,9 @@ const $navList = $('.mynav__list');
 const $navListItem = $('.mynav__list-item');
 const $resource = $('.resource');
 const $resourceDescription = $('.resource__desc');
+const $categoriesHeader = $('.categories-header');
+const $categoriesList = $('.categories-list');
+
 
 function removeTransition(element, transitionClass) {
   element.removeClass(transitionClass);
@@ -15,6 +18,14 @@ function toggleTransition(element, transitionClass) {
   element.toggleClass(transitionClass);
 }
 
+function getElementText(element) {
+  return element.text();
+}
+
+function setElementText(element, text) {
+  element.text(text);
+}
+
 
 $navListItem.on('mouseover', function () {
   const $itemHovered = $(this);
@@ -26,4 +37,8 @@ $navListItem.on('mouseover', function () {
 $resource.hover(function () {
   const $closestDescription = $(this).find($resourceDescription);
   toggleTransition($closestDescription, 'show_desc');
+});
+
+$categoriesHeader.on('click', function (e) {
+  
 });

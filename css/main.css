@@ -90,6 +90,50 @@ body {
   background: #fff;
 }
 
+.categories {
+  width: 300px;
+  margin: 15px auto;
+}
+
+.categories .categories-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #3ca3f8;
+  color: #F0F5F8;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.categories .categories-header .categories-header__text {
+  margin: 0;
+  padding: 0;
+}
+
+.categories .categories-list {
+  padding: 0;
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease-in;
+}
+
+.categories .categories-list .categories-list__category {
+  padding: 15px;
+  background: #F0F5F8;
+  color: #79b5df;
+  cursor: pointer;
+}
+
+.categories .categories-list .categories-list__category:hover {
+  background: #3ca3f8;
+  color: #F0F5F8;
+}
+
+.categories .dropdown {
+  max-height: 300px;
+}
+
 .resources {
   text-align: center;
 }

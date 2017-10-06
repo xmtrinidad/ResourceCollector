@@ -37,3 +37,41 @@
         }
     }
 }
+
+.categories {
+    width: 300px;
+    margin: 15px auto;
+    .categories-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgb(60, 163, 248);
+        color: #F0F5F8;
+        padding: 10px;
+        cursor: pointer;
+        .categories-header__text {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .categories-list {
+        padding: 0;
+        list-style: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .3s ease-in;
+        .categories-list__category {
+            padding: 15px;
+            background: #F0F5F8;
+            color: rgb(121, 181, 223);
+            cursor: pointer;
+            &:hover {
+                background: rgb(60, 163, 248);
+                color: #F0F5F8;
+            }
+        }
+    }
+    .dropdown {
+        max-height: 300px;
+    }
+}
