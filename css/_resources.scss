@@ -1,27 +1,56 @@
 .resources {
     text-align: center;
+    display: grid;
+    grid-gap: 15px;
+    align-items: start;
     .resource {
-        display: inline-block;
-        vertical-align: top;
-        margin: 15px auto;
-        background: rgba(255, 255, 255, .6);
+        margin: 7px auto;
+        background: $cardBackground;
+        color: $cardTextColor;
         border-radius: 5px;
-        box-shadow: 2px 7px 5px 0px rgba(50, 50, 50, 0.33);
         padding: 12px;
         .resource__img-container {
+            position: relative;
             text-align: center;
+            .resource__category-label {
+                text-transform: uppercase;
+                font-weight: bold;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                color: #fff;
+                background: $navBackground;
+                padding: 6px;
+            }
+            .resource__img {
+                background: rgba(0,0,0,.2);
+                border-radius: 3px;
+            }
         }
         .resource__title {
             text-align: center;
+            .resource__title-link {
+                color: $cardLinkColor;
+            }
         }
         .resource__desc {
             text-align: left;
         }
+        .resource__remove-btn {
+            display: none;
+            background: $formBtnColor;
+            border: none;
+            padding: 10px;
+            font-weight: bold;
+            min-width: 180px;
+        }
     }
 }
 
+
 @media (min-width: 768px) {
     .resources {
+        grid-template-columns: 1fr 1fr;
         .resource {
             max-width: 300px;
             .resource__desc {
@@ -36,4 +65,18 @@
         }
     }
     
+}
+
+
+@media (min-width: 992px) {
+    .resources {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .resources {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }

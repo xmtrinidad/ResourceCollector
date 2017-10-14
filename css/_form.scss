@@ -1,7 +1,9 @@
+@import "variables";
+
 .form {
-    background: rgba(255, 255, 255, .6);
+    background: $cardBackground;
     border-radius: 5px;
-    box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.65);
+    box-shadow: $formShadow;
     max-width: 330px;
     margin: 50px auto;
     padding: 12px;
@@ -10,24 +12,31 @@
     }
     .form__header {
         text-align: center;
-        color: #4D5558;
+        color: $cardTextColor;
         
     }
-    .form__field input {
+    .form__field input, 
+    .form__field select {
         background: none;
         border: none;
-        border-bottom: 2px solid rgba(185, 187, 187, 0.85);
+        border-bottom: 2px solid rgb(108, 114, 112);
+        border-radius: 0px;
+        padding: 5px;
+    }
+    .form__field-new {
+        display: none;
     }
     .form__btn-login,
-    .form__btn-signup {
+    .form__btn-signup,
+    {
         max-width: 250px;
-        background: rgba(76, 169, 219, 0.9);
+        background: $formBtnColor;
+        font-weight: bold;
         border: none;
         border-radius: 2px;
         padding: 12px;
-        &:focus {
-            background: rgba(130, 213, 243, 0.9);
-            outline: none !important;
+        &:hover {
+            background: #6f79a8;
             text-decoration: none;
         }
     }

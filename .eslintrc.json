@@ -6,6 +6,7 @@
     "rules": {
         "no-plusplus": "off",
         "linebreak-style": "off",
-        "func-names": "off"
+        "func-names": "off",
+        "prefer-arrow-callback": "off"
     }
 }

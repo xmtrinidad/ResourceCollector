@@ -1,44 +1,31 @@
-const $navList = $('.mynav__list');
-const $navListItem = $('.mynav__list-item');
-const $resource = $('.resource');
-const $resourceDescription = $('.resource__desc');
-const $categoriesHeader = $('.categories-header');
-const $categoriesList = $('.categories-list');
+// /* eslint-disable */
+checkIfNull();
+getResources();
 
-
-function removeTransition(element, transitionClass) {
-  element.removeClass(transitionClass);
-}
-
-function addTransition(element, transitionClass) {
-  element.addClass(transitionClass);
-}
-
-function toggleTransition(element, transitionClass) {
-  element.toggleClass(transitionClass);
-}
-
-function getElementText(element) {
-  return element.text();
-}
-
-function setElementText(element, text) {
-  element.text(text);
-}
-
-
-$navListItem.on('mouseover', function () {
-  const $itemHovered = $(this);
-  const $activeElement = $navList.find('.list-item--active');
-  removeTransition($activeElement, 'list-item--active');
-  addTransition($itemHovered, 'list-item--active');
+$resourcesContainer.on('click', '.resource__remove-btn', function () {
+  removeParent($(this));
+  const resTitle = $(this).parent().find('.resource__title-link').text()
+    .trim();
+  let resItems = unpackLocalStorage('resArr');
+  resItems = resItems.filter(obj => obj.title !== resTitle);
+  localStorage.setItem('resArr', JSON.stringify(resItems));
 });
 
-$resource.hover(function () {
-  const $closestDescription = $(this).find($resourceDescription);
-  toggleTransition($closestDescription, 'show_desc');
-});
 
-$categoriesHeader.on('click', function (e) {
-  
-});
+/**
+ * convert a local reference JSON into an object
+ * @param {String} localRef - the name of the local storage reference
+ */
+function unpackLocalStorage(localRef) {
+  const local = localStorage.getItem(localRef);
+  const unpacked = JSON.parse(local);
+  return unpacked;
+}
+
+/**
+ * Remove parent element
+ * @param {Element} ele - the element
+ */
+function removeParent(ele) {
+  ele.parent().remove();
+}

@@ -40,11 +40,25 @@
             </div>
             <div class="form-group form__field">
                 <label for="resource_title">Enter Email:</label>
-                <input placeholder="Resource Title" type="text" class="form-control form__field-title">
+                <input id="resource_title" placeholder="Resource Title" type="text" class="form-control form__field-title">
             </div>
             <div class="form-group form__field">
-                <label for="user_link">Link:</label>
-                <input id="user_link" placeholder="Link" type="text" class="form-control form__field-link">
+                <label for="resource_link">Link:</label>
+                <input id="resource_link" placeholder="Link" type="text" class="form-control form__field-link">
+            </div>
+            <div class="form-group form__field">
+                <label for="resource_category">Category:</label>
+                <select id="resource_category" placeholder="Choose Category" type="text" class="form-control form__field-category">
+                    <option value="" disabled selected>Select category</option>
+                    <option value="html">HTML/CSS</option>
+                    <option value="javascript">Javascript/ES6</option>
+                    <option value="angular">Angular</option>
+                    <option class="new_select" value="new">New category</option>
+                </select>
+                <div class="form-group form__field my-2">
+                    <label for="resource_new">New Category:</label>
+                    <input id="resource_new" placeholder="Add New Category" type="text" class="form-control form__field-new">
+                </div>
             </div>
 
             <div class="form__header">
@@ -70,7 +84,7 @@
 
             <div class="form__btns text-center">
                 <div class="my-3 form__btn">
-                    <button class="btn btn-primary col-6 form__btn-signup" type="submit">Submit Reesource</button>
+                    <button id="resource_submit" class="btn btn-primary col-6 form__btn-signup" type="button">Submit Resource</button>
                 </div>
             </div>
 
@@ -87,6 +101,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
+    <script src="js/variables.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/addresource.js"></script>
     <script src="js/index.js"></script>
 </body>
 
