@@ -1,11 +1,10 @@
 /* eslint-disable */
 
-
-
-$resourceSubmit.on('click', function () {
-  makeNewResource();
-});
-
+/**
+ * Make new resource object
+ * Get local storage resource array and
+ * push value onto it then reset local storage
+ */
 function makeNewResource() {
   const resource = {
     title: $resourceTitle.val(),
@@ -14,8 +13,9 @@ function makeNewResource() {
     keyPoints: getKeyPoints(),
     img: getResourceImg()
   };
-  const getLocal = localStorage.getItem('resArr');
-  const resArr = JSON.parse(getLocal);
+  const resArr = unpackLocalStorage('resArr');
+  console.log(resArr);
+  // TODO: Refactor this
   resArr.push(resource);
   localStorage.setItem('resArr', JSON.stringify(resArr));
 }
@@ -31,8 +31,6 @@ function getKeyPoints() {
   });
   return kp;
 }
-
-
 
 function checkIfYoutube() {
   if ($resourceLink.val().indexOf("https://www.youtube.com") >= 0) {
@@ -79,13 +77,11 @@ function getResourceImg() {
  * And make key/value pair
  */
 function makeNewCategory() {
-  const newResource = $resourceNew.val();
+  const newCategory = $resourceNew.val();
   const categoriesArr = unpackLocalStorage('newCategories');
-  // TODO: refactor this
-  categoriesArr.push(newResource);
-  localStorage.setItem('newCategories', JSON.stringify(resourceArr));
-  
-  CATEGORIES[newResource] = ''; // This could probably be deleted since its not saved
+  categoriesArr.push(newCategory);
+  localStorage.setItem('newCategories', JSON.stringify(categoriesArr));
+  CATEGORIES[newCategory] = ''; //FIXME: This could probably be deleted since its not saved
 }
 
 function getCategory() {
