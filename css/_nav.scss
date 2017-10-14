@@ -44,7 +44,13 @@
 
 .toolbar {
     margin: auto;
-   max-width: 450px;
+    max-width: 450px;
+    .search {
+        display: grid;
+        grid-row-gap: 10px;
+        text-align: center;
+        justify-items: center;
+    }
 }
 
 .categories {
@@ -89,5 +95,6 @@
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-column-gap: 20px;
+        align-items: end;
     }
 }

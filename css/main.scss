@@ -8,7 +8,44 @@ body {
     min-height: 700px;
 }
 
+.input--common {
+    background: none;
+    border: none;
+    border-bottom: 2px solid rgb(108, 114, 112);
+    border-radius: 0px;
+    padding: 9px;
+    &:focus {
+        background: none;
+        border-bottom: 2px solid rgb(108, 114, 112);
+    }
+}
 
+.select--common {
+    background: none;
+    border: none;
+    border-bottom: 2px solid rgb(108, 114, 112);
+    border-radius: 0px;
+    padding: 2px;
+    cursor: pointer;
+    &:focus {
+        background: none;
+        border-bottom: 2px solid rgb(108, 114, 112);
+    }
+}
+
+.btn--common {
+    max-width: 250px;
+    background: $formBtnColor;
+    color: $navColor;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    padding: 12px;
+    &:hover {
+        background: #6f79a8;
+        text-decoration: none;
+    }
+}
 
 
 

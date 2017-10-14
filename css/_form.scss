@@ -5,7 +5,7 @@
     border-radius: 5px;
     box-shadow: $formShadow;
     max-width: 330px;
-    margin: 50px auto;
+    margin: 40px auto;
     padding: 12px;
     label {
         display: none;
@@ -15,29 +15,7 @@
         color: $cardTextColor;
         
     }
-    .form__field input, 
-    .form__field select {
-        background: none;
-        border: none;
-        border-bottom: 2px solid rgb(108, 114, 112);
-        border-radius: 0px;
-        padding: 5px;
-    }
     .form__field-new {
         display: none;
-    }
-    .form__btn-login,
-    .form__btn-signup,
-    {
-        max-width: 250px;
-        background: $formBtnColor;
-        font-weight: bold;
-        border: none;
-        border-radius: 2px;
-        padding: 12px;
-        &:hover {
-            background: #6f79a8;
-            text-decoration: none;
-        }
     }
 }

@@ -17,13 +17,16 @@ function setElementText(element, text) {
 }
 
 /**
- * For local storage -- check if resource array
- * already exist to prevent a new array from being
- * initialized on page load
+ * For local storage -- check if resource array and
+ * new categories array already exist to prevent a 
+ * new array from being initialized on page load
  */
 function checkIfNull() {
   if (localStorage.getItem('resArr', JSON.stringify([])) === null) {
     localStorage.setItem('resArr', JSON.stringify([]));
+  }
+  if (localStorage.getItem('newCategories', JSON.stringify([])) === null) {
+    localStorage.setItem('newCategories', JSON.stringify([]));
   }
 }
 
@@ -32,6 +35,7 @@ function checkIfNull() {
  */
 function getResources() {
   checkIfNull();
+  // TODO: refactor this
   const resources = localStorage.getItem('resArr');
   const parsedResources = JSON.parse(resources);
   parsedResources.forEach((resource) => {
@@ -71,3 +75,21 @@ $formCategoryList.on('change', function () {
     $formNewCategory.hide();
   }
 });
+
+/**
+ * convert a local reference JSON into an object
+ * @param {String} localRef - the name of the local storage reference
+ */
+function unpackLocalStorage(localRef) {
+  const local = localStorage.getItem(localRef);
+  const unpacked = JSON.parse(local);
+  return unpacked;
+}
+
+/**
+ * Remove parent element
+ * @param {Element} ele - the element
+ */
+function removeParent(ele) {
+  ele.parent().remove();
+}

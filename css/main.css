@@ -3,7 +3,7 @@
   border-radius: 5px;
   box-shadow: 2px 7px 15px -3px #597471;
   max-width: 330px;
-  margin: 50px auto;
+  margin: 40px auto;
   padding: 12px;
 }
 
@@ -16,33 +16,8 @@
   color: #3a4441;
 }
 
-.form .form__field input,
-.form .form__field select {
-  background: none;
-  border: none;
-  border-bottom: 2px solid #6c7270;
-  border-radius: 0px;
-  padding: 5px;
-}
-
 .form .form__field-new {
   display: none;
-}
-
-.form .form__btn-login,
-.form .form__btn-signup {
-  max-width: 250px;
-  background: #9fa8da;
-  font-weight: bold;
-  border: none;
-  border-radius: 2px;
-  padding: 12px;
-}
-
-.form .form__btn-login:hover,
-.form .form__btn-signup:hover {
-  background: #6f79a8;
-  text-decoration: none;
 }
 
 .mynav {
@@ -100,6 +75,13 @@
   max-width: 450px;
 }
 
+.toolbar .search {
+  display: grid;
+  grid-row-gap: 10px;
+  text-align: center;
+  justify-items: center;
+}
+
 .categories .categories-header {
   display: flex;
   justify-content: space-between;
@@ -145,6 +127,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 20px;
+    align-items: end;
   }
 }
 
@@ -180,7 +163,7 @@
 }
 
 .resources .resource .resource__img-container .resource__img {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 3px;
 }
 
@@ -238,6 +221,48 @@
 body {
   background: #E0F2F1;
   min-height: 700px;
+}
+
+.input--common {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #6c7270;
+  border-radius: 0px;
+  padding: 9px;
+}
+
+.input--common:focus {
+  background: none;
+  border-bottom: 2px solid #6c7270;
+}
+
+.select--common {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #6c7270;
+  border-radius: 0px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.select--common:focus {
+  background: none;
+  border-bottom: 2px solid #6c7270;
+}
+
+.btn--common {
+  max-width: 250px;
+  background: #9fa8da;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+  padding: 12px;
+}
+
+.btn--common:hover {
+  background: #6f79a8;
+  text-decoration: none;
 }
  
 

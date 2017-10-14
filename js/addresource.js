@@ -77,11 +77,15 @@ function getResourceImg() {
 /**
  * Make new category if New Category is chosen
  * And make key/value pair
- * return the new resource img src
  */
 function makeNewCategory() {
   const newResource = $resourceNew.val();
-  CATEGORIES[newResource] = '';
+  const categoriesArr = unpackLocalStorage('newCategories');
+  // TODO: refactor this
+  categoriesArr.push(newResource);
+  localStorage.setItem('newCategories', JSON.stringify(resourceArr));
+  
+  CATEGORIES[newResource] = ''; // This could probably be deleted since its not saved
 }
 
 function getCategory() {

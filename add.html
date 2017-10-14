@@ -39,16 +39,16 @@
                 <h3 class="form__header-title">Add Resource</h3>
             </div>
             <div class="form-group form__field">
-                <label for="resource_title">Enter Email:</label>
-                <input id="resource_title" placeholder="Resource Title" type="text" class="form-control form__field-title">
+                <label for="resource_title">Enter Resource:</label>
+                <input id="resource_title" placeholder="Resource Title" type="text" class="form-control input--common">
             </div>
             <div class="form-group form__field">
                 <label for="resource_link">Link:</label>
-                <input id="resource_link" placeholder="Link" type="text" class="form-control form__field-link">
+                <input id="resource_link" placeholder="Link" type="text" class="form-control input--common">
             </div>
             <div class="form-group form__field">
                 <label for="resource_category">Category:</label>
-                <select id="resource_category" placeholder="Choose Category" type="text" class="form-control form__field-category">
+                <select id="resource_category" placeholder="Choose Category" type="text" class="form-control form__field-category select--common">
                     <option value="" disabled selected>Select category</option>
                     <option value="html">HTML/CSS</option>
                     <option value="javascript">Javascript/ES6</option>
@@ -57,7 +57,7 @@
                 </select>
                 <div class="form-group form__field my-2">
                     <label for="resource_new">New Category:</label>
-                    <input id="resource_new" placeholder="Add New Category" type="text" class="form-control form__field-new">
+                    <input id="resource_new" placeholder="Add New Category" type="text" class="form-control form__field-new input--common">
                 </div>
             </div>
 
@@ -67,24 +67,24 @@
 
             <div class="form-group form__field">
                 <label for="user_point1">Point 1:</label>
-                <input id="user_point1" placeholder="Point #1" type="text" class="form-control form__field-point">
+                <input id="user_point1" placeholder="Point #1" type="text" class="form-control form__field-point input--common">
             </div>
             <div class="form-group form__field">
                 <label for="user_point2">Point 2:</label>
-                <input id="user_point2" placeholder="Point #2" type="text" class="form-control form__field-point">
+                <input id="user_point2" placeholder="Point #2" type="text" class="form-control form__field-point input--common">
             </div>
             <div class="form-group form__field">
                 <label for="user_point3">Point 3:</label>
-                <input id="user_point3" placeholder="Point #3" type="text" class="form-control form__field-point">
+                <input id="user_point3" placeholder="Point #3" type="text" class="form-control form__field-point input--common">
             </div>
             <div class="form-group form__field">
                 <label for="user_point4">Point 4:</label>
-                <input id="user_point4" placeholder="Point #4" type="text" class="form-control form__field-point">
+                <input id="user_point4" placeholder="Point #4" type="text" class="form-control form__field-point input--common">
             </div>
 
             <div class="form__btns text-center">
                 <div class="my-3 form__btn">
-                    <button id="resource_submit" class="btn btn-primary col-6 form__btn-signup" type="button">Submit Resource</button>
+                    <button id="resource_submit" class="col-6 form__btn-signup btn--common" type="submit">Submit Resource</button>
                 </div>
             </div>
 
@@ -104,6 +104,7 @@
     <script src="js/variables.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/transitions.js"></script>
+    <script src="js/categories.js"></script>
     <script src="js/addresource.js"></script>
     <script src="js/index.js"></script>
 </body>
