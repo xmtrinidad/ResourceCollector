@@ -23,9 +23,10 @@ I will keep track of anything new I learn here as well as any resources that hel
 
 ## Questions
 Any questions I have throughout the development of this app I will put here and will link to any documentation when it is resolved
-| Num   | Question     |Resolved?|
-| ----  |--------------|---------|
-|1|What is local storage and how can I use it to save resources?|Yes|
+
+| Num  | Question     | Resolved? |
+| ---  |-------------|-----------|
+| 1 | What is local storage and how can I use it to save resources? | Yes |
 
 # Part I:  Front-end
 
