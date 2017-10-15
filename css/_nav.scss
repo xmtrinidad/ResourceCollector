@@ -79,6 +79,7 @@
             background: $dropdownCategoriesBackground;
             color: $dropdownCategoriesColor;
             font-weight: bold;
+            text-transform: uppercase;
             cursor: pointer;
             &:hover {
                 background: $dropdownBackground;

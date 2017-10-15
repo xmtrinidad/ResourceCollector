@@ -8,6 +8,14 @@ function removeParent(ele) {
   ele.parent().remove();
 }
 
+/**
+ * Remove an item in an array from any index
+ */
+function removeFromArr(arr, item) {
+  const index = arr.indexOf(item);
+  arr.splice(index, 1);
+}
+
 function removeTransition(element, transitionClass) {
   element.removeClass(transitionClass);
 }
@@ -38,18 +46,31 @@ function removeLocalStorageItem(item) {
  * new array from being initialized on page load
  */
 function checkIfNull() {
-  if (localStorage.getItem('resArr', JSON.stringify({})) === null) {
-    localStorage.setItem('resArr', JSON.stringify({}));
+  if (localStorage.getItem('resObj', JSON.stringify({})) === null) {
+    localStorage.setItem('resObj', JSON.stringify({}));
   }
 }
+
+/**
+ * Checks if local storage keys are empty
+ */
+function checkIfKeyEmpty() {
+  const resObj = unpackLocalStorage('resObj');
+  Object.keys(resObj).forEach((key) => {
+    if (resObj[key].length === 0) {
+      delete resObj[key];
+    }
+  });
+  localStorage.setItem('resObj', JSON.stringify(resObj));
+}
+
 
 /**
  * Check if there are resources, if not, 
  * display landing message
  */
-localStorage.clear();
 function checkIfResources() {
-  if (Object.keys(unpackLocalStorage('resArr')).length === 0) {
+  if (localStorage.getItem('resObj') === '{}') {
     $('.toolbar').hide();
   } else {
     $('.about').hide();

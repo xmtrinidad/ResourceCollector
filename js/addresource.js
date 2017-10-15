@@ -16,14 +16,14 @@ function makeNewResource() {
     keyPoints: getKeyPoints(),
     img: getResourceImg()
   };
-  const resArr = unpackLocalStorage('resArr');
-  if (category in resArr) {
-    resArr[category].push(resource);
+  const resObj = unpackLocalStorage('resObj');
+  if (category in resObj) {
+    resObj[category].push(resource);
   } else {
-    resArr[category] = [resource];
+    resObj[category] = [resource];
   }
-  console.log(resArr);
-  localStorage.setItem('resArr', JSON.stringify(resArr));
+  console.log(resObj);
+  localStorage.setItem('resObj', JSON.stringify(resObj));
 }
 
 /**

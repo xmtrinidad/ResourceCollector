@@ -42,9 +42,14 @@ $categoriesHeader.on('click', function () {
  * Replace dropdown element text on click
  */
 $categoriesList.on('click', function (e) {
-  const $clickedText = $(e.target).text();
-  setElementText($categoriesHeader, $clickedText);
+  const $clickedText = $(e.target).text().trim();
+  setElementText($categoriesHeader, $clickedText.toUpperCase());
   removeTransition($categoriesList, 'dropdown');
+  if ($clickedText === 'Show All') {
+    showAllResources();
+  } else {
+    filterResources($clickedText);
+  }
 });
 
 /**
@@ -63,20 +68,12 @@ $resourcesContainer.on('click', '.resource__remove-btn', function () {
   const resCategory = $(this).parent().find('.resource__category-label').text();
   const resId = Number($(this).parent().attr('id'));
 
-  let resItems = unpackLocalStorage('resArr');
+  let resItems = unpackLocalStorage('resObj');
   const resCatArr = resItems[resCategory];
   const obj = resCatArr.find(obj => obj.id === resId);
   removeFromArr(resCatArr, obj);
-  localStorage.setItem('resArr', JSON.stringify(resItems));
+  localStorage.setItem('resObj', JSON.stringify(resItems));
 });
-
-/**
- * Remove an item in an array from any index
- */
-function removeFromArr(arr, item) {
-  const index = arr.indexOf(item);
-  arr.splice(index, 1);
-}
 
 /**
  * Hide/show add cateogry based on selection

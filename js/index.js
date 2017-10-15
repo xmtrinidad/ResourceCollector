@@ -1,7 +1,8 @@
 /* eslint-disable */
 checkIfNull();
+checkIfKeyEmpty();
 checkIfResources();
-getResources();
 getCategories();
+showAllResources();
 
 

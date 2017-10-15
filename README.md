@@ -4,6 +4,8 @@ As an aspiring web developer, I am constantly finding new resources.  As the lis
 ## About this project
 Small web application using HTML, CSS, Javascript and jQuery to practice various ES6 concepts and Firebase Authentication.
 
+Check out my project management and workflow: [Trello](https://trello.com/b/3g0lMhAE)
+
 #### Project Goals 
 * Practice various concepts commonly found in web applications
     * Add/remove resources and categories
@@ -27,13 +29,49 @@ Any questions I have throughout the development of this app I will put here and 
 | Num  | Question     | Resolved? |
 | ---  |-------------|-----------|
 | 1 | What is local storage and how can I use it to save resources? | Yes |
+| 2 | How do I filter by category? | Yes|
+| 3 | How do I filter by search? | No |
 
 # Part I:  Front-end
 
 ## Local Storage
-Before implementing firebase, I want to get a good front-end concept implemented using local storage, which is something I've never used before.
+Before implementing firebase, I want to get a good front-end concept implemented using local storage, which is something I've never used before. See "#1 What is local storage and how can I use it to save resources?" for my documentation about using local storage
 
-### 1. What is local storage and how can I use it to save resources?
+## Refactoring Categories Object
+The initial implementation of categories was a local storage array of objects that looked something like this:
+```js
+const resArr = [
+  { 
+    id: ++index,
+    title: $resourceTitle.val(),
+    link: $resourceLink.val(),
+    category: category,
+    keyPoints: getKeyPoints(),
+    img: getResourceImg()
+  }
+];
+```
+I soon realized that if I wanted to sort by category, I needed a more efficient way of setting up my objects.
+
+Refactoring this would require a new local storage item as an Object instead of an array of objects.  Each object key would have an array of object resources.
+
+After refactoring, my new local storage object (after parsing) looks like this:
+```js
+const resObj = {
+  html: [{
+    id: ++index,
+    title: $resourceTitle.val(),
+    link: $resourceLink.val(),
+    category: category,
+    keyPoints: getKeyPoints(),
+    img: getResourceImg()
+  }]
+}
+```
+Organizing the object in this way allows for new categories to be added more efficiently.  The values can also be pusehd onto the key value array more easily.  
+# Resolved Questions
+
+## 1. What is local storage and how can I use it to save resources?
 
 <i><small>As of 10/13/2017 I have implemented local storage.  The end product will use Firebase for storing data, but using local storage for this current implementation will allow me to experiment with storing data and fix any bugs</small></i>
 
@@ -90,6 +128,58 @@ If I had multiple local storage items and just wanted to remove by reference (ke
 localStorage.removeItem('refName');
 ```
 In this project, when removing resources I don't want to delete my entire array of resources, so instead a filter is used to remove the item and the array reference is overwritten to not include the deleted item:
+
+## 2. How do I filter by category?
+
+This is something I've never tried before, but after thinking about it for a little bit I was able to implement it.  I think the important step was solved by refactoring the resource object earlier during the development process.
+
+The first thing I need is the text of what I'm going to filter.  This comes from choosing an item in the drop down.  When selecting an item, this triggers an event.
+```js
+$categoriesList.on('click', function (e) {
+  const $clickedText = $(e.target).text().trim();
+  if ($clickedText === 'Show All') {
+    showAllResources();
+  } else {
+    filterResources($clickedText);
+  }
+});
+```
+Since items within the dropdown are dynamic, they need to be targeted (e.target).  The text is trimmed incase there is any white space.
+
+If the text is equal to 'Show All' the <i>showAllResources()</i> function is called.  This generates the HTML for all resources and appends them to its parent container.
+
+If 'Show All' is not selected, filter <i>filterResources()</i> is called, passing in the clicked text as the parameter.  Filtering resources is almost identical to showing all resources except that, the local storage object needs to be accessed even deep to access taht particular category and its associated resources:
+
+Here is the showAllResources() function:
+```js
+function showAllResources() {
+    const resources = unpackLocalStorage('resObj')
+    $resourcesContainer.empty();
+    for (let i = 0; i < Object.keys(resources).length; i++) {
+        Object.values(resources)[i].forEach((resource) => {
+            appendResources(resource);
+        });
+    }
+}
+```
+
+And here is the filterResources() function:
+```js
+function filterResources(category) {
+    const resources = unpackLocalStorage('resObj')
+    const objArr = resources[category];
+    $resourcesContainer.empty();
+    for (let i = 0; i < objArr.length; i++) {
+        appendResources(objArr[i]);
+    }
+}
+```
+
+The difference is that <i>showAllResources()</i> uses a forEach loop within a for loop to iterate over all the values of the local resource.  This is necessary because the local resource is not an array, but an object, where as the values to the object are all arrays, which is why <i>filterResources()</i> doesn't need to use a forEach loop.
+
+The filterResources() function access the particular category then uses a regular for loop to iterate over its associated resources.
+
+To make the cord more DRY, I refactored the HTML that generates the dynamic data into its own function, <i>appendResources()</i>.  This function takes in the object for a parameter
 
 
 
