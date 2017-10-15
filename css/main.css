@@ -250,7 +250,7 @@ body {
   border-bottom: 2px solid #6c7270;
 }
 
-.btn--common {
+.btn--common, .btn--link {
   max-width: 250px;
   background: #9fa8da;
   color: #fff;
@@ -258,11 +258,21 @@ body {
   border: none;
   border-radius: 2px;
   padding: 12px;
+  cursor: pointer;
+  transition: background .2s;
 }
 
-.btn--common:hover {
+.btn--common:hover, .btn--link:hover {
   background: #6f79a8;
   text-decoration: none;
+}
+
+.btn--link {
+  display: inline-block;
+}
+
+.btn--link:hover {
+  color: #fff;
 }
  
 

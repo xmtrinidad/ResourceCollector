@@ -41,9 +41,19 @@ body {
     border: none;
     border-radius: 2px;
     padding: 12px;
+    cursor: pointer;
+    transition: background .2s;
     &:hover {
         background: #6f79a8;
         text-decoration: none;
+    }
+}
+
+.btn--link {
+    @extend .btn--common;
+    display: inline-block;
+    &:hover {
+        color: $navColor;
     }
 }
 

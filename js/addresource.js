@@ -5,18 +5,24 @@
  * Get local storage resource array and
  * push value onto it then reset local storage
  */
+let index = -1;
 function makeNewResource() {
+  const category = getCategory().toLowerCase();
   const resource = {
+    id: ++index,
     title: $resourceTitle.val(),
     link: $resourceLink.val(),
-    category: getCategory(),
+    category: category,
     keyPoints: getKeyPoints(),
     img: getResourceImg()
   };
   const resArr = unpackLocalStorage('resArr');
+  if (category in resArr) {
+    resArr[category].push(resource);
+  } else {
+    resArr[category] = [resource];
+  }
   console.log(resArr);
-  // TODO: Refactor this
-  resArr.push(resource);
   localStorage.setItem('resArr', JSON.stringify(resArr));
 }
 
@@ -77,11 +83,7 @@ function getResourceImg() {
  * And make key/value pair
  */
 function makeNewCategory() {
-  const newCategory = $resourceNew.val();
-  const categoriesArr = unpackLocalStorage('newCategories');
-  categoriesArr.push(newCategory);
-  localStorage.setItem('newCategories', JSON.stringify(categoriesArr));
-  CATEGORIES[newCategory] = ''; //FIXME: This could probably be deleted since its not saved
+ 
 }
 
 function getCategory() {
@@ -89,7 +91,6 @@ function getCategory() {
     return '';
   }
   if ($resourceCategory.val() === 'new') {
-    makeNewCategory();
     return $resourceNew.val();
   }
   return $resourceCategory.val();

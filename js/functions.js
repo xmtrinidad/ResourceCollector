@@ -38,11 +38,21 @@ function removeLocalStorageItem(item) {
  * new array from being initialized on page load
  */
 function checkIfNull() {
-  if (localStorage.getItem('resArr', JSON.stringify([])) === null) {
-    localStorage.setItem('resArr', JSON.stringify([]));
+  if (localStorage.getItem('resArr', JSON.stringify({})) === null) {
+    localStorage.setItem('resArr', JSON.stringify({}));
   }
-  if (localStorage.getItem('newCategories', JSON.stringify([])) === null) {
-    localStorage.setItem('newCategories', JSON.stringify([]));
+}
+
+/**
+ * Check if there are resources, if not, 
+ * display landing message
+ */
+localStorage.clear();
+function checkIfResources() {
+  if (Object.keys(unpackLocalStorage('resArr')).length === 0) {
+    $('.toolbar').hide();
+  } else {
+    $('.about').hide();
   }
 }
 

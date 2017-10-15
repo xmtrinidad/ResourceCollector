@@ -24,7 +24,7 @@ $resourcesContainer.on('mouseenter', '.resource', function () {
 });
 
 /**
- * Slideup key pointso n mouse leave
+ * Slideup key points on mouse leave
  */
 $resourcesContainer.on('mouseleave', '.resource', function () {
   const $closestDescription = $(this).find('ul');
@@ -60,12 +60,23 @@ $removeBtn.on('click', function () {
  */
 $resourcesContainer.on('click', '.resource__remove-btn', function () {
   removeParent($(this));
-  const resTitle = $(this).parent().find('.resource__title-link').text()
-    .trim();
+  const resCategory = $(this).parent().find('.resource__category-label').text();
+  const resId = Number($(this).parent().attr('id'));
+
   let resItems = unpackLocalStorage('resArr');
-  resItems = resItems.filter(obj => obj.title !== resTitle);
+  const resCatArr = resItems[resCategory];
+  const obj = resCatArr.find(obj => obj.id === resId);
+  removeFromArr(resCatArr, obj);
   localStorage.setItem('resArr', JSON.stringify(resItems));
 });
+
+/**
+ * Remove an item in an array from any index
+ */
+function removeFromArr(arr, item) {
+  const index = arr.indexOf(item);
+  arr.splice(index, 1);
+}
 
 /**
  * Hide/show add cateogry based on selection
