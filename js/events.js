@@ -74,7 +74,6 @@ $resourcesContainer.on('click', '.resource__remove-btn', function () {
   removeFromArr(resCatArr, obj);
   localStorage.setItem('resObj', JSON.stringify(resItems));
 });
-
 /**
  * Hide/show add cateogry based on selection
  */
@@ -85,4 +84,12 @@ $formCategoryList.on('change', function () {
   } else {
     $formNewCategory.hide();
   }
+});
+
+/**
+ * Search input that filters resources
+ */
+$('.search__input').on('keyup', function(){
+  const text = $(this).val().toLowerCase();
+  filter(text);
 });

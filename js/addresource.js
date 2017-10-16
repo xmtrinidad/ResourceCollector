@@ -5,11 +5,11 @@
  * Get local storage resource array and
  * push value onto it then reset local storage
  */
-let index = -1;
+
 function makeNewResource() {
   const category = getCategory().toLowerCase();
   const resource = {
-    id: ++index,
+    id: getIndex(),
     title: $resourceTitle.val(),
     link: $resourceLink.val(),
     category: category,
@@ -23,7 +23,14 @@ function makeNewResource() {
     resObj[category] = [resource];
   }
   console.log(resObj);
+  
   localStorage.setItem('resObj', JSON.stringify(resObj));
+}
+function getIndex(remove) {
+  let index = Number(JSON.parse(localStorage.getItem('index')));
+  index++;
+  localStorage.setItem('index', JSON.stringify(index));
+  return index;
 }
 
 /**

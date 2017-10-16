@@ -48,9 +48,9 @@ function removeLocalStorageItem(item) {
 function checkIfNull() {
   if (localStorage.getItem('resObj', JSON.stringify({})) === null) {
     localStorage.setItem('resObj', JSON.stringify({}));
+    localStorage.setItem('index', JSON.stringify(-1));
   }
 }
-
 /**
  * Checks if local storage keys are empty
  */
@@ -85,4 +85,19 @@ function unpackLocalStorage(localRef) {
   const local = localStorage.getItem(localRef);
   const unpacked = JSON.parse(local);
   return unpacked;
+}
+
+/**
+ * Filter function taken from Stack overflow
+ * https://stackoverflow.com/questions/1772035/filtering-a-list-as-you-type-with-jquery
+ */
+function filter(text) {
+  $('.resources > .resource').each(function() {
+    const match = $(this).text().replace(/\s/g, '').toLowerCase();
+    if (match.search(text) > -1) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
 }
