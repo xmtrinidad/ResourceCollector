@@ -79,23 +79,18 @@ function getYouTubeImg(id) {
  * return that first
  */
 function getResourceImg() {
-  return checkIfYoutube() ?
-    getYouTubeImg(getYouTubeId($resourceLink.val())) :
-    CATEGORIES[$resourceCategory.val()];
-
+  return checkIfYoutube() ? getYouTubeImg(getYouTubeId($resourceLink.val())) :
+    CATEGORIES[$resourceCategory.val()] === undefined ? getRandomImage() : CATEGORIES[$resourceCategory.val()];
 }
 
-/**
- * Make new category if New Category is chosen
- * And make key/value pair
- */
-function makeNewCategory() {
- 
+function getRandomImage() {
+  const stockArr = CATEGORIES.stock;
+  return stockArr[Math.floor(Math.random()*stockArr.length)];
 }
 
 function getCategory() {
   if ($resourceCategory.val() === null) {
-    return '';
+    return 'All';
   }
   if ($resourceCategory.val() === 'new') {
     return $resourceNew.val();
