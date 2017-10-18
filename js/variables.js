@@ -1,5 +1,10 @@
 /* eslint-disable */
 
+const $removeAllBox = $('.mynav__remove-all');
+const $dots = $('.mynav__header-dots');
+const $removeAllBtn = $('.mynav__remove_btn');
+const $nevermindBtn = $('.mynav__nevermind_btn');
+
 const $navList = $('.mynav__list');
 const $navListItem = $('.mynav__list-item');
 const $removeBtn = $('.remove_btn');
@@ -34,3 +39,4 @@ const CATEGORIES = {
   ]
 }
 
+let removeClicked = false;

@@ -1,5 +1,19 @@
 /* eslint-disable */
 
+$dots.on('click', function () {
+  console.log($removeAllBox);
+  addTransition($removeAllBox, 'show_warn');
+  
+});
+
+$nevermindBtn.on('click', function () {
+  removeTransition($removeAllBox, 'show_warn');
+});
+
+$removeAllBtn.on('click', function () {
+  localStorage.clear();
+  parent.location.reload(true);
+});
 
 /**
  * Hover effect for nav
@@ -20,6 +34,9 @@ $resourceSubmit.on('click', function () {
  */
 $resourcesContainer.on('mouseenter', '.resource', function () {
   const $closestDescription = $(this).find('ul');
+  if (removeClicked) {
+    return;
+  }
   addTransition($closestDescription, 'show_desc');
 });
 
@@ -28,6 +45,9 @@ $resourcesContainer.on('mouseenter', '.resource', function () {
  */
 $resourcesContainer.on('mouseleave', '.resource', function () {
   const $closestDescription = $(this).find('ul');
+  if (removeClicked) {
+    return;
+  }
   removeTransition($closestDescription, 'show_desc');
 });
 
@@ -56,6 +76,13 @@ $categoriesList.on('click', function (e) {
  * Toggle remove resources button
  */
 $removeBtn.on('click', function () {
+  removeClicked = removeClicked !== true;
+  console.log($resourceDescription);
+  if (removeClicked) {
+    addTransition($('.resource__desc'), 'show_desc')
+  } else {
+    removeTransition($('.resource__desc'), 'show_desc');
+  }
   $('.resource__remove-btn').toggle();
 });
 

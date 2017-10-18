@@ -20,19 +20,35 @@
 
 <body>
     <nav class="mynav">
-        <h4 class="mynav__title">Resource Collector</h4>
+        <div class="mynav__header">
+            <h4 class="mynav__header-title">Resource Collector</h4>
+            <i class="fa fa-ellipsis-v mynav__header-dots fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="mynav__remove-all">
+            <p class="mynav__remove-all-text">**WARNING** Clicking the button below will remove all resources.</p>
+            <div class="mynav__remove-all-btns">
+                <button type="button" class="btn--warn mynav__remove_btn">Remove All Resources</button>
+                <button type="button" class="btn--common mynav__nevermind_btn">Nevermind</button>
+            </div>
+        </div>
         <ul class="mynav__list">
             <li class="mynav__list-item list-item--active">
-                <a class="mynav__list-item-link" href="./home.html">View
-                    <br>All</a>
+                <a class="mynav__list-item-link" href="./home.html">
+                    <i class="fa fa-th fa-2x" aria-hidden="true"></i>
+                    <small>View All</small>
+                </a>
             </li>
             <li class="mynav__list-item">
-                <a class="mynav__list-item-link" href="./add.html">Add
-                    <br>Resource</a>
+                <a class="mynav__list-item-link" href="./add.html">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                    <small>Add Resource</small>
+                </a>
             </li>
             <li class="mynav__list-item">
-                <a class="mynav__list-item-link" href="./index.html">Log
-                    <br>Out</a>
+                <a class="mynav__list-item-link" href="./index.html">
+                    <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+                    <small>Log Out</small>
+                </a>
             </li>
         </ul>
     </nav>
@@ -57,11 +73,33 @@
         </div>
         <div class="about text-center">
             <h3 class="display-4">
-                <a href="https://github.com/xmtrinidad/ResourceCollector/blob/master/README.md">Readme</a> for more information</h3>
+                <a style="color: dodgerblue;" href="https://github.com/xmtrinidad/ResourceCollector/blob/master/README.md">Readme</a> for more information</h3>
             <h4>Get started by adding a resource</h4>
             <a href="add.html" class="btn--link">Add Resource</a>
         </div>
     </main>
+    <footer class="footer">
+        <h3 class="footer__logo">
+            <a href="#">XT</a>
+        </h3>
+        <ul class="footer__social-icons">
+            <li class="footer__social-icon">
+                <a href="https://github.com/xmtrinidad/ResourceCollector">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="footer__social-icon">
+                <a href="mailto:xmtrinidad@gmail.com">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="footer__social-icon">
+                <a href="https://codepen.io/xmtrinidad/">
+                    <i class="fa fa-codepen" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>

@@ -3,7 +3,7 @@
   border-radius: 5px;
   box-shadow: 2px 7px 15px -3px #597471;
   max-width: 330px;
-  margin: 40px auto;
+  margin: 70px auto;
   padding: 12px;
 }
 
@@ -26,11 +26,55 @@
   font-weight: bold;
 }
 
-.mynav .mynav__title {
+.mynav .mynav__header {
+  background: #00867d;
+  position: relative;
+  padding: 8px;
+}
+
+.mynav .mynav__header .mynav__header-title {
+  flex: 1;
+  text-align: center;
   margin: 0;
   padding: 10px;
-  background: #00867d;
   text-align: center !important;
+}
+
+.mynav .mynav__header .mynav__header-dots {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mynav .mynav__remove-all {
+  padding: 10px;
+  position: absolute;
+  top: -600px;
+  left: 60px;
+  width: 400px;
+  background: #00867d;
+  color: #fff;
+  z-index: 5;
+  text-align: center;
+  transition: top 0.5s cubic-bezier(0.85, -0.33, 0.31, 1.19);
+}
+
+.mynav .mynav__remove-all .mynav__remove-all-text {
+  font-size: 1.4rem;
+  margin: 5px 0 10px 0;
+}
+
+.mynav .mynav__remove-all .mynav__remove-all-btns {
+  display: grid;
+  grid-row-gap: 7px;
+  justify-items: center;
+  margin: 3px 0 8px 0;
+}
+
+.mynav .mynav__remove-all .mynav__remove-all-btns .mynav__remove_btn, .mynav .mynav__remove-all .mynav__remove-all-btns .mynav__nevermind_btn {
+  min-width: 220px;
 }
 
 .mynav .mynav__list {
@@ -38,6 +82,8 @@
   padding: 0;
   display: flex;
   justify-content: space-around;
+  max-width: 430px;
+  margin: auto;
 }
 
 .mynav .mynav__list .mynav__list-item {
@@ -54,10 +100,12 @@
 }
 
 .mynav .mynav__list .mynav__list-item .mynav__list-item-link {
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   padding: 10px;
   color: inherit;
+  text-decoration: none;
 }
 
 .mynav .mynav__list .list-item--active:after {
@@ -121,6 +169,10 @@
 
 .categories .dropdown {
   max-height: 300px;
+}
+
+.mynav__remove-all.show_warn {
+  top: 180px;
 }
 
 @media (min-width: 768px) {
@@ -221,7 +273,27 @@
 
 body {
   background: #E0F2F1;
-  min-height: 700px;
+  height: 100%;
+  z-index: 4;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: inherit;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  min-height: 640px;
+  margin: 40px 0;
 }
 
 .input--common {
@@ -251,7 +323,7 @@ body {
   border-bottom: 2px solid #6c7270;
 }
 
-.btn--common, .btn--link {
+.btn--common, .btn--link, .btn--warn {
   max-width: 250px;
   background: #9fa8da;
   color: #fff;
@@ -263,7 +335,7 @@ body {
   transition: background .2s;
 }
 
-.btn--common:hover, .btn--link:hover {
+.btn--common:hover, .btn--link:hover, .btn--warn:hover {
   background: #6f79a8;
   text-decoration: none;
 }
@@ -274,6 +346,39 @@ body {
 
 .btn--link:hover {
   color: #fff;
+}
+
+.btn--warn {
+  background: #e63737;
+}
+
+.btn--warn:hover {
+  background: #c02929;
+}
+
+.footer {
+  background: #00867d;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.0rem;
+  color: #fff;
+}
+
+.footer .footer__logo {
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer__social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 175px;
+  justify-content: space-between;
 }
  
 

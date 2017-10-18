@@ -2,17 +2,57 @@
     background: #4db6ac;
     color: $navColor;
     font-weight: bold;
-    .mynav__title {
-        margin: 0;
-        padding: 10px;
+    .mynav__header {
         background: #00867d;
-        text-align: center !important;
+        position: relative;
+        padding: 8px;
+        .mynav__header-title {
+            flex: 1;
+            text-align: center;
+            margin: 0;
+            padding: 10px;
+            text-align: center !important;
+        }
+        .mynav__header-dots {
+            position: absolute;
+            top: 13px;
+            right: 10px;
+            cursor: pointer;
+            padding: 5px;
+        }
+    }
+    .mynav__remove-all {
+        padding: 10px;
+        position: absolute;
+        top: -600px;
+        left: 60px;
+        width: 400px;
+        background: #00867d;
+        color: #fff;
+        z-index: 5;
+        text-align: center;
+        transition: top .5s cubic-bezier(.85,-0.33,.31,1.19);
+        .mynav__remove-all-text {
+            font-size: 1.4rem;
+            margin: 5px 0 10px 0;
+        }
+        .mynav__remove-all-btns {
+            display: grid;
+            grid-row-gap: 7px;
+            justify-items: center;
+            margin: 3px 0 8px 0;
+            .mynav__remove_btn, .mynav__nevermind_btn {
+                min-width: 220px;
+            }
+        }
     }
     .mynav__list {
         list-style: none;
         padding: 0;
         display: flex;
         justify-content: space-around;
+        max-width: 430px;
+        margin: auto;
         .mynav__list-item {
             cursor: pointer;
             position: relative;
@@ -24,10 +64,12 @@
                 transition: width .2s;
             }
             .mynav__list-item-link {
-                display: block;
+                display: flex;
+                flex-direction: column;
                 height: 100%;
                 padding: 10px;
                 color: inherit;
+                text-decoration: none;
             }
         }
         .list-item--active:after {
@@ -89,6 +131,10 @@
     .dropdown {
         max-height: 300px;
     }
+}
+
+.mynav__remove-all.show_warn {
+    top: 180px;
 }
 
 @media (min-width: 768px) {
