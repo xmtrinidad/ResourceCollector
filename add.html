@@ -20,19 +20,35 @@
 
 <body>
     <nav class="mynav">
-        <h4 class="mynav__title">Resource Collector</h4>
+        <div class="mynav__header">
+            <h4 class="mynav__header-title">Resource Collector</h4>
+            <i class="fa fa-ellipsis-v mynav__header-dots fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="mynav__remove-all">
+            <p class="mynav__remove-all-text">**WARNING** Clicking the button below will remove all resources.</p>
+            <div class="mynav__remove-all-btns">
+                <button type="button" class="btn--warn mynav__remove_btn">Remove All Resources</button>
+                <button type="button" class="btn--common mynav__nevermind_btn">Nevermind</button>
+            </div>
+        </div>
         <ul class="mynav__list">
-            <li class="mynav__list-item">
-                <a class="mynav__list-item-link" href="./home.html">View
-                    <br>All</a>
-            </li>
             <li class="mynav__list-item list-item--active">
-                <a class="mynav__list-item-link" href="./add.html">Add
-                    <br>Resource</a>
+                <a class="mynav__list-item-link" href="./home.html">
+                    <i class="fa fa-th fa-2x" aria-hidden="true"></i>
+                    <small>View All</small>
+                </a>
             </li>
             <li class="mynav__list-item">
-                <a class="mynav__list-item-link" href="./index.html">Log
-                    <br>Out</a>
+                <a class="mynav__list-item-link" href="./add.html">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                    <small>Add Resource</small>
+                </a>
+            </li>
+            <li class="mynav__list-item">
+                <a class="mynav__list-item-link" href="./index.html">
+                    <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+                    <small>Log Out</small>
+                </a>
             </li>
         </ul>
     </nav>
@@ -51,17 +67,17 @@
             </div>
             <div class="form-group form__field">
                 <label for="resource_category">Category:</label>
-                <select id="resource_category" placeholder="Choose Category" type="text" class="form-control form__field-category select--common">
-                    <option value="" disabled selected>Select category</option>
-                    <option value="html">HTML/CSS</option>
-                    <option value="javascript">Javascript/ES6</option>
-                    <option value="angular">Angular</option>
-                    <option class="new_select" value="new">New category</option>
-                </select>
-                <div class="form-group form__field my-2">
-                    <label for="resource_new">New Category:</label>
-                    <input id="resource_new" placeholder="Add New Category" type="text" class="form-control form__field-new input--common">
+                <div class="form__select">
+                    <select id="resource_category" placeholder="Choose Category" type="text" class="form-control form__field-category select--common">
+                        <option value="" disabled selected>Select category</option>
+                    </select>
+                    <button class="btn--small add-category-btn" type="button">Add <i class="fa fa-plus-circle" aria-hidden="true"></i></button>
                 </div>
+            </div>
+            <div class="form-group form__field my-2">
+                <label for="resource_new">New Category:</label>
+                <input id="resource_new" placeholder="Add New Category" type="text" class="form-control form__field-new input--common">
+            </div>
             </div>
 
             <div class="form__header">

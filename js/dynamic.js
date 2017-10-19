@@ -2,6 +2,7 @@
 
 /**
  * Add categories to drop down menu
+ * on main page
  */
 function getCategories() {
     const resObj = unpackLocalStorage('resObj');
@@ -11,6 +12,25 @@ function getCategories() {
         );
     });
 }
+
+/**
+ * Get categories from local storage object
+ * And append to dropdown in add resource page
+ */
+function getCategoryList() {
+    const resObj = JSON.parse(localStorage.getItem('resObj'));
+    console.log(resObj);
+    if (Object.keys(resObj) === null) {
+      return;
+    }
+    Object.keys(resObj).forEach((category) => {
+      if (category !== '') {
+        $formCategoryList.append(
+          `<option value="${category}">${category}</option>`
+        );
+      }
+    });
+  }
 
 
 /**

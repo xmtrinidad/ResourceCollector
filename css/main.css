@@ -52,8 +52,11 @@
   padding: 10px;
   position: absolute;
   top: -600px;
-  left: 60px;
-  width: 400px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 430px;
   background: #00867d;
   color: #fff;
   z-index: 5;
@@ -172,7 +175,7 @@
 }
 
 .mynav__remove-all.show_warn {
-  top: 180px;
+  top: 60px;
 }
 
 @media (min-width: 768px) {
@@ -239,6 +242,12 @@
   padding: 10px;
   font-weight: bold;
   min-width: 180px;
+}
+
+.form__select {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  grid-gap: 10px;
 }
 
 @media (min-width: 768px) {
@@ -323,7 +332,7 @@ main {
   border-bottom: 2px solid #6c7270;
 }
 
-.btn--common, .btn--link, .btn--warn {
+.btn--common, .btn--link, .btn--small, .btn--warn {
   max-width: 250px;
   background: #9fa8da;
   color: #fff;
@@ -335,7 +344,7 @@ main {
   transition: background .2s;
 }
 
-.btn--common:hover, .btn--link:hover, .btn--warn:hover {
+.btn--common:hover, .btn--link:hover, .btn--small:hover, .btn--warn:hover {
   background: #6f79a8;
   text-decoration: none;
 }
@@ -346,6 +355,11 @@ main {
 
 .btn--link:hover {
   color: #fff;
+}
+
+.btn--small {
+  padding: 5px;
+  font-size: .9rem;
 }
 
 .btn--warn {

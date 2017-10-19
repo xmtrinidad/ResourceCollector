@@ -23,9 +23,10 @@ function makeNewResource() {
     resObj[category] = [resource];
   }
   console.log(resObj);
-  
   localStorage.setItem('resObj', JSON.stringify(resObj));
 }
+
+
 function getIndex(remove) {
   let index = Number(JSON.parse(localStorage.getItem('index')));
   index++;
@@ -80,20 +81,23 @@ function getYouTubeImg(id) {
  */
 function getResourceImg() {
   return checkIfYoutube() ? getYouTubeImg(getYouTubeId($resourceLink.val())) :
-    CATEGORIES[$resourceCategory.val()] === undefined ? getRandomImage() : CATEGORIES[$resourceCategory.val()];
+  getRandomImage();
 }
 
 function getRandomImage() {
-  const stockArr = CATEGORIES.stock;
-  return stockArr[Math.floor(Math.random()*stockArr.length)];
+  const title = $resourceTitle.val();
+  const splitTitle = title.split(' ').join();
+  return `https://source.unsplash.com/featured/?${splitTitle}`;
 }
 
 function getCategory() {
+  console.log(isNewResource);
+  if (isNewResource) {
+    console.log($resourceNew.val());
+    return $resourceNew.val();
+  }
   if ($resourceCategory.val() === null) {
     return 'All';
-  }
-  if ($resourceCategory.val() === 'new') {
-    return $resourceNew.val();
   }
   return $resourceCategory.val();
 }

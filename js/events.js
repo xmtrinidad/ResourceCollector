@@ -101,17 +101,16 @@ $resourcesContainer.on('click', '.resource__remove-btn', function () {
   removeFromArr(resCatArr, obj);
   localStorage.setItem('resObj', JSON.stringify(resItems));
 });
+
 /**
- * Hide/show add cateogry based on selection
+ * Toggle add category
  */
-$formCategoryList.on('change', function () {
-  const $selected = $(this).val();
-  if ($selected === 'new') {
-    $formNewCategory.show();
-  } else {
-    $formNewCategory.hide();
-  }
+$addCategoryBtn.on('click', function () {
+  isNewResource = isNewResource !== true;
+  $formNewCategory.toggle();
 });
+
+
 
 /**
  * Search input that filters resources

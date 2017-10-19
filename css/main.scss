@@ -74,6 +74,12 @@ main {
     }
 }
 
+.btn--small {
+    @extend .btn--common;
+    padding: 5px;
+    font-size: .9rem;
+}
+
 .btn--warn {
     @extend .btn--common;
     background: rgb(230, 55, 55);
