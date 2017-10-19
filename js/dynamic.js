@@ -19,7 +19,6 @@ function getCategories() {
  */
 function getCategoryList() {
     const resObj = JSON.parse(localStorage.getItem('resObj'));
-    console.log(resObj);
     if (Object.keys(resObj) === null) {
       return;
     }

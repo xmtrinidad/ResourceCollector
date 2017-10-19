@@ -1,8 +1,7 @@
 /* eslint-disable */
 
 $dots.on('click', function () {
-  console.log($removeAllBox);
-  addTransition($removeAllBox, 'show_warn');
+  toggleTransition($removeAllBox, 'show_warn');
   
 });
 
@@ -25,7 +24,11 @@ $navListItem.on('mouseover', function () {
   addTransition($itemHovered, 'list-item--active');
 });
 
-$resourceSubmit.on('click', function () {
+$resourceSubmit.on('click', function (e) {
+  if (checkForm()) {
+    e.preventDefault();
+    return;
+  }
   makeNewResource();
 });
 
@@ -77,7 +80,6 @@ $categoriesList.on('click', function (e) {
  */
 $removeBtn.on('click', function () {
   removeClicked = removeClicked !== true;
-  console.log($resourceDescription);
   if (removeClicked) {
     addTransition($('.resource__desc'), 'show_desc')
   } else {

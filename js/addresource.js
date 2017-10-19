@@ -26,6 +26,13 @@ function makeNewResource() {
   localStorage.setItem('resObj', JSON.stringify(resObj));
 }
 
+function checkForm() {
+  if ($resourceTitle.val().trim() === '' || $resourceLink.val().trim() === '') {
+    return true;
+  }
+  return false;
+}
+
 
 function getIndex(remove) {
   let index = Number(JSON.parse(localStorage.getItem('index')));
@@ -91,7 +98,6 @@ function getRandomImage() {
 }
 
 function getCategory() {
-  console.log(isNewResource);
   if (isNewResource) {
     console.log($resourceNew.val());
     return $resourceNew.val();

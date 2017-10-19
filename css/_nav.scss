@@ -1,9 +1,9 @@
 .mynav {
-    background: #4db6ac;
-    color: $navColor;
+    background: $mainPrimary;
     font-weight: bold;
+    color: $textColor;
     .mynav__header {
-        background: #00867d;
+        background: $mainDark;
         position: relative;
         padding: 8px;
         .mynav__header-title {
@@ -30,8 +30,7 @@
         margin-left: auto; 
         margin-right: auto; 
         max-width: 430px;
-        background: #00867d;
-        color: #fff;
+        background: $mainDark;
         z-index: 5;
         text-align: center;
         transition: top .5s cubic-bezier(.85,-0.33,.31,1.19);
@@ -41,7 +40,7 @@
         }
         .mynav__remove-all-btns {
             display: grid;
-            grid-row-gap: 7px;
+            grid-row-gap: 10px;
             justify-items: center;
             margin: 3px 0 8px 0;
             .mynav__remove_btn, .mynav__nevermind_btn {
@@ -82,70 +81,12 @@
             height: 6px;
             bottom: 0;
             left: 0;
-            background: #00897B;
+            background: $mainDark;
         }
     }
 }
 
-.toolbar {
-    margin: auto;
-    max-width: 450px;
-    .search {
-        display: grid;
-        grid-row-gap: 10px;
-        text-align: center;
-        justify-items: center;
-    }
-}
-
-.categories {
-    .categories-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: $dropdownBackground;
-        color: $navColor;
-        padding: 10px;
-        font-weight: bold;
-        cursor: pointer;
-        .categories-header__text {
-            margin: 0;
-            padding: 0;
-        }
-    }
-    .categories-list {
-        padding: 0;
-        list-style: none;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height .3s ease-in;
-        .categories-list__category {
-            padding: 15px;
-            background: $dropdownCategoriesBackground;
-            color: $dropdownCategoriesColor;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            &:hover {
-                background: $dropdownBackground;
-            }
-        }
-    }
-    .dropdown {
-        max-height: 300px;
-    }
-}
-
+// Transition for reset box
 .mynav__remove-all.show_warn {
     top: 60px;
-}
-
-
-@media (min-width: 768px) {
-    .search {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-column-gap: 20px;
-        align-items: end;
-    }
 }

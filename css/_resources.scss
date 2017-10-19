@@ -6,7 +6,6 @@
     .resource {
         margin: 7px auto;
         background: $cardBackground;
-        color: $cardTextColor;
         border-radius: 5px;
         padding: 12px;
         .resource__img-container {
@@ -19,7 +18,7 @@
                 bottom: 0;
                 left: 0;
                 color: #fff;
-                background: $navBackground;
+                background: $mainPrimary;
                 padding: 6px;
             }
             .resource__img {
@@ -38,7 +37,7 @@
         }
         .resource__remove-btn {
             display: none;
-            background: $formBtnColor;
+            background: $btnPrimary;
             border: none;
             padding: 10px;
             font-weight: bold;
@@ -47,11 +46,7 @@
     }
 }
 
-.form__select {
-    display: grid;
-    grid-template-columns: 1fr 60px;
-    grid-gap: 10px;
-}
+
 
 
 @media (min-width: 768px) {

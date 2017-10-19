@@ -1,21 +1,13 @@
 // Project
-$projectBackground : #E0F2F1;
+$mainDark: #00867d;
+$mainPrimary: #4db6ac;
+$mainSecondary: #B2DFDB;
+$textColor: #fff;
 
-// Nav
-$navBackground : #4db6ac;
-$navColor : #fff;
-
-// Dropdown
-$dropdownBackground : #9fa8da;
-$dropdownCategoriesBackground: #d1d9ff;
-$dropdownCategoriesColor: #000;
-$dropdownColor : #fafafa;
-$dropdownItemsColor : #fafafa;
+$btnPrimary: #9fa8da;
+$btnSecondary: #d1d9ff;
 
 // Form and Resource Cards
-$cardBackground : #B2DFDB;
-$formColor: #fff;
+$cardBackground : $mainSecondary;
 $formShadow: 2px 7px 15px -3px rgb(89, 116, 113);
-$formBtnColor: #9fa8da;
-$cardTextColor : rgb(58, 68, 65);
-$cardLinkColor : #00695C;
+$cardLinkColor : $mainDark;

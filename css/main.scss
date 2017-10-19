@@ -1,7 +1,13 @@
 @import "variables";
 @import "form";
 @import "nav";
+@import "categories";
 @import "resources";
+@import "footer";
+
+/*****************
+DEFAULT STYLES
+******************/
 body {
     background: #E0F2F1;
     height: 100%;
@@ -52,8 +58,8 @@ main {
 
 .btn--common {
     max-width: 250px;
-    background: $formBtnColor;
-    color: $navColor;
+    background: $btnPrimary;
+    color: $textColor;
     font-weight: bold;
     border: none;
     border-radius: 2px;
@@ -70,7 +76,7 @@ main {
     @extend .btn--common;
     display: inline-block;
     &:hover {
-        color: $navColor;
+        color: $textColor;
     }
 }
 
@@ -85,29 +91,5 @@ main {
     background: rgb(230, 55, 55);
     &:hover {
         background: rgb(192, 41, 41);
-    }
-}
-
-.footer {
-    background: #00867d;
-    padding: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 2.0rem;
-    color: #fff;
-    .footer__logo {
-        padding: 0;
-        margin: 0;
-    }
-    .footer__social-icons {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: row;
-        flex-basis: 175px;
-        justify-content: space-between;
-        .footer__social-icon {}
     }
 }
