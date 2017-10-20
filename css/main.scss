@@ -93,3 +93,15 @@ main {
         background: rgb(192, 41, 41);
     }
 }
+
+.form--warn {
+    font-weight: bold;
+    margin: 5px 0;
+    .form--warn-icon {
+        color: rgb(230, 55, 55);
+    }
+}
+
+.resource-warn-msg, .link-warn-msg {
+    display: none;
+}

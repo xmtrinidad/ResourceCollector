@@ -57,6 +57,17 @@ function showAllResources() {
             appendResources(resource);
         });
     }
+    hideUntilReady();
+}
+
+/**
+ * Hide resources until images are ready
+ */
+function hideUntilReady() {
+    $('.resource').hide();
+    $('.resource__img').on('load', function () {
+        $('.resource').show()
+    });
 }
 
 /**

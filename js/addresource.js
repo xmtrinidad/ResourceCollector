@@ -28,6 +28,12 @@ function makeNewResource() {
 
 function checkForm() {
   if ($resourceTitle.val().trim() === '' || $resourceLink.val().trim() === '') {
+    if ($resourceTitle.val().trim() === '') {
+      $('.resource-warn-msg').show();
+    }
+    if ($resourceLink.val().trim() === '') {
+      $('.link-warn-msg').show();
+    }
     return true;
   }
   return false;
@@ -91,11 +97,13 @@ function getResourceImg() {
   getRandomImage();
 }
 
+
 function getRandomImage() {
-  const title = $resourceTitle.val();
-  const splitTitle = title.split(' ').join();
-  return `https://source.unsplash.com/featured/?${splitTitle}`;
+  const randomImgSrc = RANDOM_IMAGES[Math.floor(Math.random() * RANDOM_IMAGES.length)];
+  return randomImgSrc;
 }
+
+
 
 function getCategory() {
   if (isNewResource) {

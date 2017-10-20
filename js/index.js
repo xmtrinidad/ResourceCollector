@@ -6,7 +6,7 @@ checkIfResources();
 getCategories();
 // Add Resource page
 getCategoryList();
-
 showAllResources();
+
 
 

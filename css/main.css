@@ -190,6 +190,12 @@
   }
 }
 
+.about {
+  padding: 10px;
+  max-width: 600px;
+  margin: auto;
+}
+
 .resources {
   text-align: center;
   display: grid;
@@ -392,6 +398,19 @@ main {
 
 .btn--warn:hover {
   background: #c02929;
+}
+
+.form--warn {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.form--warn .form--warn-icon {
+  color: #e63737;
+}
+
+.resource-warn-msg, .link-warn-msg {
+  display: none;
 }
  
 
