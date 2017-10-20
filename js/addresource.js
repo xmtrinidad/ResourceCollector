@@ -107,7 +107,9 @@ function getRandomImage() {
 
 function getCategory() {
   if (isNewResource) {
-    console.log($resourceNew.val());
+    if ($resourceNew.val().trim() === '') {
+      return 'ALL';
+    }
     return $resourceNew.val();
   }
   if ($resourceCategory.val() === null) {
