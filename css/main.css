@@ -208,6 +208,7 @@
   background: #B2DFDB;
   border-radius: 5px;
   padding: 12px;
+  box-shadow: 2px 7px 15px -3px #597471;
 }
 
 .resources .resource .resource__img-container {
