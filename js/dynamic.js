@@ -1,4 +1,3 @@
-/* eslint-disable */
 
 /**
  * Add categories to drop down menu

@@ -1,4 +1,3 @@
-/* eslint-disable */
 
 $dots.on('click', function () {
   toggleTransition($removeAllBox, 'show_warn');

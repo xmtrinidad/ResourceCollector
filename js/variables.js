@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 
 const $removeAllBox = $('.mynav__remove-all');
 const $dots = $('.mynav__header-dots');

@@ -2,7 +2,9 @@
 As an aspiring web developer, I am constantly finding new resources.  As the list grows, they are becoming more difficult to keep track of.  This small application aims to make that a little easier.
 
 ## About this project
-Small web application using HTML, CSS, Javascript and jQuery to practice various ES6 concepts and Firebase Authentication.
+Small web application using HTML, CSS, Javascript and jQuery to practice various ES6 concepts.  This is a front-end implementation, using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to save data.
+
+In the future, I plan on using Firebase for the backend and implementing the log in form from this project.
 
 Check out my project management and workflow: [Trello](https://trello.com/b/3g0lMhAE)
 
@@ -11,7 +13,7 @@ Check out my project management and workflow: [Trello](https://trello.com/b/3g0l
     * Add/remove resources and categories
     * Submit forms
     * Filter categories by selection and search
-* Get more experience with Firebase, specifically Firebase Authentication
+    * Save data locally
 
 ## Things Learned
 I will keep track of anything new I learn here as well as any resources that helped me resolve my issues.

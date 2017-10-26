@@ -22,31 +22,71 @@
     <nav class="mynav">
         <div class="mynav__header">
             <h4 class="mynav__header-title">Resource Collector</h4>
+            <i class="fa fa-ellipsis-v mynav__header-dots fa-2x" aria-hidden="true"></i>
         </div>
+        <div class="mynav__remove-all">
+            <p class="mynav__remove-all-text">**WARNING** Clicking the button below will remove all resources.</p>
+            <div class="mynav__remove-all-btns">
+                <button type="button" class="btn--warn mynav__remove_btn">Remove All Resources</button>
+                <button type="button" class="btn--common mynav__nevermind_btn">Nevermind</button>
+            </div>
+        </div>
+        <ul class="mynav__list">
+            <li class="mynav__list-item list-item--active">
+                <a class="mynav__list-item-link" href="./index.html">
+                    <i class="fa fa-th fa-2x" aria-hidden="true"></i>
+                    <small>View All</small>
+                </a>
+            </li>
+            <li class="mynav__list-item">
+                <a class="mynav__list-item-link" href="./add.html">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                    <small>Add Resource</small>
+                </a>
+            </li>
+            <li class="mynav__list-item">
+                <a class="mynav__list-item-link" href="#">
+                    <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+                    <small>Log Out</small>
+                </a>
+            </li>
+        </ul>
     </nav>
     <main class="container">
-        <form action="home.html" class="form animated bounceInDown">
-            <div class="form__header">
-                <h3 class="form__header-title">Resource Collector</h3>
-                <small class="form__header-small">Login or Sign-up</small>
-            </div>
-            <div class="form-group form__field">
-                <label for="username">Enter Email:</label>
-                <input placeholder="Email" type="email" class="form-control form__field-email input--common">
-            </div>
-            <div class="form-group form__field">
-                <label for="username">Password:</label>
-                <input placeholder="Password" type="password" class="form-control form__field-password input--common">
-            </div>
-            <div class="form__btns text-center">
-                <div class="my-3 form__btn">
-                    <button class="btn btn-primary col-6 form__btn-login btn--common" type="submit">Log In</button>
+        <div class="toolbar">
+            <div class="categories">
+                <div class="categories-header">
+                    <p class="categories-header__text">Categories</p>
+                    <i class="fa fa-chevron-down categories-header__icon" aria-hidden="true"></i>
                 </div>
-                <div class="my-3 form__btn">
-                    <button class="btn btn-primary col-6 form__btn-signup btn--common" type="submit">Sign Up</button>
-                </div>
+                <ul class="categories-list">
+                    <li class="categories-list__category">Show All</li>
+                </ul>
             </div>
-        </form>
+            <div class="form-group search">
+                <input placeholder="Search" type="text" class="form-control input--common search__input fuzzy-search">
+                <button class="btn--common remove_btn">Remove Resources</button>
+            </div>
+        </div>
+        <div class="resources">
+
+        </div>
+        <div class="about">
+            <h3 class="display-4">Gather Your Resources</h3>
+            <ul>
+                <li>Add/remove resources</li>
+                <li>Sort by cateogry or search</li>
+                <li>Youtube links will show the video thumbnail</li>
+                <li>Other links will display a random image</li>
+                <li>View the
+                    <a style="color: dodgerblue;" href="https://github.com/xmtrinidad/ResourceCollector/blob/master/README.md">Readme</a> for more information
+                </li>
+            </ul>
+            <div>
+                <h4>Get started by adding a resource</h4>
+                <a href="add.html" class="btn--link my-2">Add Resource</a>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <h3 class="footer__logo">
@@ -70,11 +110,11 @@
             </li>
         </ul>
     </footer>
-
-
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
     <script src="js/variables.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/addresource.js"></script>

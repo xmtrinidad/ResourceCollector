@@ -1,4 +1,3 @@
-/* eslint-disable */
 
 /**
  * Remove parent element

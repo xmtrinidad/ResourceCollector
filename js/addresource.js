@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 
 /**
  * Make new resource object
